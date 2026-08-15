@@ -6,6 +6,18 @@
   <title>Prime Imóveis & Consultoria (Demonstrativo Fictício) — Carteira de Imóveis & Consultoria</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    function switchTheme(themeName, btn) {
+      document.body.className = 'theme-' + themeName;
+      var btns = document.querySelectorAll('.theme-btn');
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].classList.remove('active');
+      }
+      if (btn) {
+        btn.classList.add('active');
+      }
+    }
+  </script>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
     
@@ -269,20 +281,16 @@
   </div>
 
   <script>
-    var propertiesData = JSON.parse('[{"title":"Esplêndido Apartamento de Alto Padrão (Ref: PRO-101)","categoria":"Apartamentos","desc":"Residência suspensa de 220m² de área privativa, totalmente automatizada com projeto luminotécnico assinado. Conta com amplo living integrado de 3 ambientes, varanda gourmet panorâmica com fechamento em vidro, 4 suítes espaçosas (suíte máster com closet e hidromassagem), acabamentos em mármore importado, marcenaria fina planejada e 3 vagas de garagem demarcadas com ponto para carregamento elétrico.","priceStr":"Venda: R$ 2.450.000","price":2450000,"image":"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&auto=format&fit=crop&q=80"},{"title":"Mansão Contemporânea em Condomínio Fechado (Ref: PRO-102)","categoria":"Casas em Condomínio","desc":"Projeto arquitetônico neoclássico de 580m² de área construída em terreno de 800m². Oferece 5 suítes máster com varanda privativa, pé-direito duplo na sala principal, adega climatizada para 200 rótulos, espaço gourmet integrado à piscina aquecida com borda infinita, sauna a vapor, paisagismo tropical e garagem coberta para 4 veículos.","priceStr":"Venda: R$ 5.900.000","price":5900000,"image":"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&auto=format&fit=crop&q=80"},{"title":"Penthouse Cobertura Duplex com Piscina Privativa (Ref: PRO-103)","categoria":"Coberturas","desc":"Cobertura duplex exclusiva de 380m² com vista panorâmica. Piso inferior composto por 4 suítes, lavabo e rouparia. Piso superior totalmente dedicado ao lazer privativo, com piscina aquecida de alvenaria, solarium com deck de madeira nobre, churrasqueira a carvão, espaço fitness e 4 vagas cobertas na garagem.","priceStr":"Venda: R$ 3.800.000","price":3800000,"image":"https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&auto=format&fit=crop&q=80"},{"title":"Sobrado Residencial com Quintal Gourmet (Ref: PRO-104)","categoria":"Locação Residencial","desc":"Residência funcional de 190m² em rua tranquila e arborizada. Possui 3 dormitórios (1 suíte máster), living amplo para 2 ambientes com piso em porcelanato refinado, cozinha americana com armários embutidos, quintal privativo com espaço gourmet e churrasqueira, além de garagem coberta para 2 carros grandes.","priceStr":"Aluguel: R$ 4.800/mês","price":4800,"image":"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&auto=format&fit=crop&q=80"}]');
+    var rawCatalog = "%5B%7B%22title%22%3A%22Espl%C3%AAndido%20Apartamento%20de%20Alto%20Padr%C3%A3o%20(Ref%3A%20PRO-101)%22%2C%22categoria%22%3A%22Apartamentos%22%2C%22desc%22%3A%22Resid%C3%AAncia%20suspensa%20de%20220m%C2%B2%20de%20%C3%A1rea%20privativa%2C%20totalmente%20automatizada%20com%20projeto%20luminot%C3%A9cnico%20assinado.%20Conta%20com%20amplo%20living%20integrado%20de%203%20ambientes%2C%20varanda%20gourmet%20panor%C3%A2mica%20com%20fechamento%20em%20vidro%2C%204%20su%C3%ADtes%20espa%C3%A7osas%20(su%C3%ADte%20m%C3%A1ster%20com%20closet%20e%20hidromassagem)%2C%20acabamentos%20em%20m%C3%A1rmore%20importado%2C%20marcenaria%20fina%20planejada%20e%203%20vagas%20de%20garagem%20demarcadas%20com%20ponto%20para%20carregamento%20el%C3%A9trico.%22%2C%22priceStr%22%3A%22Venda%3A%20R%24%202.450.000%22%2C%22price%22%3A2450000%2C%22image%22%3A%22https%3A%2F%2Fimages.unsplash.com%2Fphoto-1600585154340-be6161a56a0c%3Fw%3D400%26auto%3Dformat%26fit%3Dcrop%26q%3D80%22%7D%2C%7B%22title%22%3A%22Mans%C3%A3o%20Contempor%C3%A2nea%20em%20Condom%C3%ADnio%20Fechado%20(Ref%3A%20PRO-102)%22%2C%22categoria%22%3A%22Casas%20em%20Condom%C3%ADnio%22%2C%22desc%22%3A%22Projeto%20arquitet%C3%B4nico%20neocl%C3%A1ssico%20de%20580m%C2%B2%20de%20%C3%A1rea%20constru%C3%ADda%20em%20terreno%20de%20800m%C2%B2.%20Oferece%205%20su%C3%ADtes%20m%C3%A1ster%20com%20varanda%20privativa%2C%20p%C3%A9-direito%20duplo%20na%20sala%20principal%2C%20adega%20climatizada%20para%20200%20r%C3%B3tulos%2C%20espa%C3%A7o%20gourmet%20integrado%20%C3%A0%20piscina%20aquecida%20com%20borda%20infinita%2C%20sauna%20a%20vapor%2C%20paisagismo%20tropical%20e%20garagem%20coberta%20para%204%20ve%C3%ADculos.%22%2C%22priceStr%22%3A%22Venda%3A%20R%24%205.900.000%22%2C%22price%22%3A5900000%2C%22image%22%3A%22https%3A%2F%2Fimages.unsplash.com%2Fphoto-1600596542815-ffad4c1539a9%3Fw%3D400%26auto%3Dformat%26fit%3Dcrop%26q%3D80%22%7D%2C%7B%22title%22%3A%22Penthouse%20Cobertura%20Duplex%20com%20Piscina%20Privativa%20(Ref%3A%20PRO-103)%22%2C%22categoria%22%3A%22Coberturas%22%2C%22desc%22%3A%22Cobertura%20duplex%20exclusiva%20de%20380m%C2%B2%20com%20vista%20panor%C3%A2mica.%20Piso%20inferior%20composto%20por%204%20su%C3%ADtes%2C%20lavabo%20e%20rouparia.%20Piso%20superior%20totalmente%20dedicado%20ao%20lazer%20privativo%2C%20com%20piscina%20aquecida%20de%20alvenaria%2C%20solarium%20com%20deck%20de%20madeira%20nobre%2C%20churrasqueira%20a%20carv%C3%A3o%2C%20espa%C3%A7o%20fitness%20e%204%20vagas%20cobertas%20na%20garagem.%22%2C%22priceStr%22%3A%22Venda%3A%20R%24%203.800.000%22%2C%22price%22%3A3800000%2C%22image%22%3A%22https%3A%2F%2Fimages.unsplash.com%2Fphoto-1545324418-cc1a3fa10c00%3Fw%3D400%26auto%3Dformat%26fit%3Dcrop%26q%3D80%22%7D%2C%7B%22title%22%3A%22Sobrado%20Residencial%20com%20Quintal%20Gourmet%20(Ref%3A%20PRO-104)%22%2C%22categoria%22%3A%22Loca%C3%A7%C3%A3o%20Residencial%22%2C%22desc%22%3A%22Resid%C3%AAncia%20funcional%20de%20190m%C2%B2%20em%20rua%20tranquila%20e%20arborizada.%20Possui%203%20dormit%C3%B3rios%20(1%20su%C3%ADte%20m%C3%A1ster)%2C%20living%20amplo%20para%202%20ambientes%20com%20piso%20em%20porcelanato%20refinado%2C%20cozinha%20americana%20com%20arm%C3%A1rios%20embutidos%2C%20quintal%20privativo%20com%20espa%C3%A7o%20gourmet%20e%20churrasqueira%2C%20al%C3%A9m%20de%20garagem%20coberta%20para%202%20carros%20grandes.%22%2C%22priceStr%22%3A%22Aluguel%3A%20R%24%204.800%2Fm%C3%AAs%22%2C%22price%22%3A4800%2C%22image%22%3A%22https%3A%2F%2Fimages.unsplash.com%2Fphoto-1512917774080-9991f1c4c750%3Fw%3D400%26auto%3Dformat%26fit%3Dcrop%26q%3D80%22%7D%5D";
+    var propertiesData = [];
+    try {
+      propertiesData = JSON.parse(decodeURIComponent(rawCatalog));
+    } catch(e) {
+      console.error("Error parsing catalog JSON:", e);
+    }
+    
     var phone = "5513996351877";
     var mapsUrl = "https://www.google.com/maps?q=Regiao+Metropolitana+SP";
-
-    function switchTheme(themeName, btn) {
-      document.body.className = 'theme-' + themeName;
-      var btns = document.querySelectorAll('.theme-btn');
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].classList.remove('active');
-      }
-      if (btn) {
-        btn.classList.add('active');
-      }
-    }
 
     // Build unique category pills
     (function initCategoryPills() {
