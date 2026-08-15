@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Imóveis & Consultoria (Demonstrativo Fictício) — Carteira de Imóveis & Consultoria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+    body { background: #070a12; color: #f8fafc; min-height: 100vh; padding-bottom: 60px; }
+    .hero-banner { width:100%; height:260px; background-size:cover; background-position:center; position:relative; }
+    .hero-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(7,10,18,0.1) 0%, #070a12 100%); }
+    .container { max-width: 960px; margin:0 auto; padding: 0 20px; position:relative; z-index:2; }
+    .profile-header { display:flex; align-items:flex-end; gap:20px; margin-top:-75px; margin-bottom:24px; flex-wrap:wrap; }
+    .avatar { width:130px; height:130px; border-radius:24px; border:3px solid #f59e0b; object-fit:cover; box-shadow:0 10px 25px rgba(245,158,11,0.3); }
+    .badge-pro { background:rgba(245,158,11,0.15); border:1px solid #f59e0b; color:#fbbf24; font-size:0.75rem; font-weight:800; padding:4px 12px; border-radius:20px; margin-bottom:8px; display:inline-block; }
+    .social-links { display:flex; align-items:center; gap:16px; margin-top:10px; }
+    
+    .grid-props { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:22px; margin-bottom:32px; }
+    .prop-card { background:rgba(15,23,42,0.85); border:1px solid rgba(255,255,255,0.08); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; backdrop-filter:blur(12px); }
+    .prop-img { width:100%; height:190px; object-fit:cover; }
+    .prop-body { padding:20px; flex:1; display:flex; flex-direction:column; }
+    .prop-cat { font-size:0.75rem; font-weight:800; color:#f59e0b; text-transform:uppercase; margin-bottom:4px; }
+    .prop-title { font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px; }
+    .prop-desc { font-size:0.85rem; color:#94a3b8; margin-bottom:16px; flex:1; line-height:1.5; white-space: pre-line; }
+    .prop-footer { display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(255,255,255,0.05); padding-top:14px; }
+    .prop-price { font-size:1.05rem; font-weight:800; color:#fbbf24; }
+    .btn-visit { background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; text-decoration:none; padding:10px 14px; border-radius:12px; font-size:0.82rem; font-weight:700; box-shadow:0 4px 12px rgba(245,158,11,0.25); }
+  </style>
+</head>
+<body>
+  <div class="hero-banner" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=80');">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="container">
+    <div class="profile-header">
+      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=300&auto=format&fit=crop&q=80" class="avatar" alt="Prime Imóveis & Consultoria (Demonstrativo Fictício)">
+      <div style="flex:1;">
+        <span class="badge-pro">Plano Pro 💎 — Carteira de Imóveis & Consultoria</span>
+        <h1 style="font-family:'Outfit',sans-serif; font-size:2rem; font-weight:800; color:#fff;">Prime Imóveis & Consultoria (Demonstrativo Fictício)</h1>
+        <div style="color:#fbbf24; font-weight:700; margin-bottom:6px;">Consultoria Imobiliária & Gestão de Carteira • Santos, Guarujá & Riviera de São Lourenço</div>
+        <p style="font-size:0.88rem; color:#94a3b8; line-height:1.4;">Catálogo demonstrativo de lançamentos de alto padrão, apartamentos vista mar e consultoria técnica para investidores e imobiliárias. Agende sua visita diretamente pelo WhatsApp!</p>
+        <div class="social-links">
+          <a href="https://instagram.com/primeimoveis_demo" target="_blank" style="color:#e1306c; font-size:1.4rem;"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com/@primeimoveisdemo" target="_blank" style="color:#ef4444; font-size:1.4rem;"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://facebook.com/primeimoveisdemo" target="_blank" style="color:#1877f2; font-size:1.4rem;"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="font-family:'Outfit',sans-serif; font-size:1.4rem; margin-bottom:20px; color:#fff;">
+      <i class="fa-solid fa-building" style="color:#f59e0b"></i> Imóveis & Oportunidades em Destaque
+    </h2>
+
+    <div class="grid-props">
+      
+    <div class="prop-card" data-cat="Apartamentos">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&auto=format&fit=crop&q=80" class="prop-img" alt="Apartamento Vista Mar 3 Suítes — Gonzaga">
+      <div class="prop-body">
+        <span class="prop-cat">Apartamentos</span>
+        <h3 class="prop-title">Apartamento Vista Mar 3 Suítes — Gonzaga</h3>
+        <p class="prop-desc">180m² úteis, varanda gourmet envidraçada, 3 suítes amplas, lavabo e 2 vagas demarcadas. Prédio com lazer completo frente ao mar. Cód. Abelha: AB-8840.</p>
+        
+        <div class="prop-footer">
+          <span class="prop-price">Venda: R$ 1.450.000</span>
+          <a href="https://wa.me/5513996351877?text=Ol%C3%A1!%20Tenho%20interesse%20no%20im%C3%B3vel:%20Apartamento%20Vista%20Mar%203%20Su%C3%ADtes%20%E2%80%94%20Gonzaga" target="_blank" class="btn-visit">
+            <i class="fa-regular fa-calendar-check"></i> Agendar Visita
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="prop-card" data-cat="Casas em Condomínio">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&auto=format&fit=crop&q=80" class="prop-img" alt="Casa Alto Padrão em Condomínio Fechado">
+      <div class="prop-body">
+        <span class="prop-cat">Casas em Condomínio</span>
+        <h3 class="prop-title">Casa Alto Padrão em Condomínio Fechado</h3>
+        <p class="prop-desc">450m² de área construída, 5 suítes, espaço gourmet privativo, piscina aquecida com hidromassagem e paisagismo exclusivo. Cód. Abelha: AB-9021.</p>
+        
+        <div class="prop-footer">
+          <span class="prop-price">Venda: R$ 4.800.000</span>
+          <a href="https://wa.me/5513996351877?text=Ol%C3%A1!%20Tenho%20interesse%20no%20im%C3%B3vel:%20Casa%20Alto%20Padr%C3%A3o%20em%20Condom%C3%ADnio%20Fechado" target="_blank" class="btn-visit">
+            <i class="fa-regular fa-calendar-check"></i> Agendar Visita
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="prop-card" data-cat="Locação Residencial">
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&auto=format&fit=crop&q=80" class="prop-img" alt="Sobrado Triplex com Quintal & Churrasqueira">
+      <div class="prop-body">
+        <span class="prop-cat">Locação Residencial</span>
+        <h3 class="prop-title">Sobrado Triplex com Quintal & Churrasqueira</h3>
+        <p class="prop-desc">3 dormitórios (1 suíte), sala ampla em 2 ambientes, quintal privativo com churrasqueira e garagem para 2 carros. Disponível para locação imediata.</p>
+        
+        <div class="prop-footer">
+          <span class="prop-price">Aluguel: R$ 5.200/mês</span>
+          <a href="https://wa.me/5513996351877?text=Ol%C3%A1!%20Tenho%20interesse%20no%20im%C3%B3vel:%20Sobrado%20Triplex%20com%20Quintal%20%26%20Churrasqueira" target="_blank" class="btn-visit">
+            <i class="fa-regular fa-calendar-check"></i> Agendar Visita
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="prop-card" data-cat="Coberturas">
+      <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&auto=format&fit=crop&q=80" class="prop-img" alt="Penthouse Cobertura Duplex 4 Suítes — Ponta da Praia">
+      <div class="prop-body">
+        <span class="prop-cat">Coberturas</span>
+        <h3 class="prop-title">Penthouse Cobertura Duplex 4 Suítes — Ponta da Praia</h3>
+        <p class="prop-desc">320m², sol da manhã, terraço panorâmico com piscina privativa, churrasqueira a carvão e 4 vagas demarcadas com ponto para carro elétrico.</p>
+        
+        <div class="prop-footer">
+          <span class="prop-price">Venda: R$ 3.200.000</span>
+          <a href="https://wa.me/5513996351877?text=Ol%C3%A1!%20Tenho%20interesse%20no%20im%C3%B3vel:%20Penthouse%20Cobertura%20Duplex%204%20Su%C3%ADtes%20%E2%80%94%20Ponta%20da%20Praia" target="_blank" class="btn-visit">
+            <i class="fa-regular fa-calendar-check"></i> Agendar Visita
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    </div>
+  </div>
+</body>
+</html>
